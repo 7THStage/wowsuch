@@ -12,7 +12,7 @@ body{background:#F2EDE0;color:#222;background-image:url(data:image\png;base64,iV
 </style>
   <script data-require="angular.js@*" data-semver="1.2.5" src="http://code.angularjs.org/1.2.5/angular.min.js"></script>
   <script>
-"use strict";function soCallback(){}angular.module("wowSuch",[]),angular.module("wowSuch").controller("dogeController",function(a,t){a.multiplier=1,t.success(function(t){var l=t.return.markets.DOGE;a.value=l.lasttradeprice})}),angular.module("wowSuch").factory("dogeData",function(a){var t="http://jsonp.jit.su/?callback=soCallback&url=http%3A%2F%2Fpubapi.cryptsy.com%2Fapi.php%3Fmethod%3Dsinglemarketdata%26marketid%3D132&callback=JSON_CALLBACK";return a.jsonp(t)});
+"use strict";function soCallback(){}angular.module("wowSuch",[]),angular.module("wowSuch").controller("dogeController",["$scope","dogeData",function(a,t){a.multiplier=1,t.success(function(t){var o=t.return.markets.DOGE;a.value=o.lasttradeprice})}]),angular.module("wowSuch").factory("dogeData",["$http",function(a){var t="http://jsonp.jit.su/?callback=soCallback&url=http%3A%2F%2Fpubapi.cryptsy.com%2Fapi.php%3Fmethod%3Dsinglemarketdata%26marketid%3D132&callback=JSON_CALLBACK";return a.jsonp(t)}]);
 </script>
   
 </head>
