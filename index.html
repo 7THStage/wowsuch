@@ -8,13 +8,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="canonical" href="http://wowsuch.io" />
   <link rel="stylesheet" href="foundation.min.css" />
-  <style>
-body{background:#F2EDE0;color:#222;font-weight:700}.very-row{margin-top:3em}input.much-input{width:50%;float:right}.so-centered{text-align:center}.very-value,.so-tweets{text-align:right}.such-fade{-webkit-animation:fadein 1s;animation:fadein 1s}@-webkit-keyframes fadein{from{opacity:0}to{opacity:1}}@keyframes fadein{from{opacity:0}to{opacity:1}}
-</style>
+  <link rel="stylesheet" href="so.css" />
   <script src="angular.min.js"></script>
-  <script>
-"use strict";function soCallback(){}angular.module("wowSuch",[]),angular.module("wowSuch").controller("dogeController",["$scope","dogeData",function(a,t){a.multiplier=1,t.success(function(t){var o=t.return.markets.DOGE;a.value=o.lasttradeprice})}]),angular.module("wowSuch").factory("dogeData",["$http",function(a){var t="https://jsonp.nodejitsu.com/?callback=soCallback&url=http%3A%2F%2Fpubapi.cryptsy.com%2Fapi.php%3Fmethod%3Dsinglemarketdata%26marketid%3D132&callback=JSON_CALLBACK";return a.jsonp(t)}]);
-</script>
+  <script src="such.js"></script>
   <title ng-if="value" ng-bind="'1 DOGE = ' +value + ' BTC - Wow Such'">Dogecoin Price Calculator - Wow Such</title>
 </head>
 
@@ -82,9 +78,7 @@ body{background:#F2EDE0;color:#222;font-weight:700}.very-row{margin-top:3em}inpu
 
   </div>
 
-  <script>
-!function(e,a,n,t,c,o,s){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,o=a.createElement(n),s=a.getElementsByTagName(n)[0],o.async=1,o.src=t,s.parentNode.insertBefore(o,s)}(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","UA-46687167-1","wowsuch.io"),ga("send","pageview");
-</script>
+  <script src="very.js"></script>
 
 </body>
 
