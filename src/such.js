@@ -1,4 +1,4 @@
-// such.js is generated from such.djs 
+// such.js is generated from such.djs
 
 "use strict";
 
@@ -11,8 +11,7 @@ angular.module('wowSuch')
 
             dogeData.success(function(data) {
 
-                $scope.numberOfBTCInput = $scope.singleDogecoinPriceInBTC = data.
-                return .markets.DOGE.lasttradeprice;
+                $scope.numberOfBTCInput = $scope.singleDogecoinPriceInBTC = data;
 
                 $scope.amendDogecoinInput = function amendDogecoinInput(numberOfDogecoinInput) {
                     if (numberOfDogecoinInput === "1") {
@@ -30,10 +29,8 @@ angular.module('wowSuch')
                 }
 
                 usdData.success(function(data) {
-                    $scope.singleBTCPriceInUSD = data.
-                    return .buy.value;
-                    $scope.numberOfUSDInput = data.
-                    return .buy.value * $scope.numberOfBTCInput;
+                    $scope.singleBTCPriceInUSD = data;
+                    $scope.numberOfUSDInput = data * $scope.numberOfBTCInput;
 
                     $scope.amendUSDInput = function amendUSDInput(numberOfUSDInput) {
                         $scope.numberOfDogecoinInput = (numberOfUSDInput / $scope.singleDogecoinPriceInBTC) / $scope.singleBTCPriceInUSD;
@@ -48,17 +45,15 @@ angular.module('wowSuch')
 angular.module('wowSuch')
     .factory('dogeData', ['$http',
         function($http) {
-            var dogeUrl = 'https://lit-beach-8985.herokuapp.com/?callback=soCallback&url=http%3A%2F%2Fpubapi.cryptsy.com%2Fapi.php%3Fmethod%3Dsinglemarketdata%26marketid%3D132&callback=JSON_CALLBACK';
-            return $http.jsonp(dogeUrl);
+            var dogeUrl = 'https://moolah.ch/api/rates?f=DOGE&t=BTC&a=1.json';
+            return $http.get(dogeUrl);
         }
     ]);
 
 angular.module('wowSuch')
     .factory('usdData', ['$http',
         function($http) {
-            var dataUrl = 'https://lit-beach-8985.herokuapp.com/?callback=soCallback&url=http://data.mtgox.com/api/1/BTCUSD/ticker_fast&callback=JSON_CALLBACK';
-            return $http.jsonp(dataUrl);
+            var dataUrl = 'https://moolah.ch/api/rates?f=BTC&t=USD&a=1.json';
+            return $http.get(dataUrl);
         }
     ]);
-
-function soCallback(data) {}
