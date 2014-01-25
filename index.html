@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="canonical" href="http://wowsuch.io" />
-  <link rel="stylesheet" href="c5b9646e.doge.min.css"/>
+  <link rel="stylesheet" href="0f222c46.doge.min.css"/>
   <script src="4cc326cc.doge.min.js"></script>
   <title ng-if="singleDogecoinPriceInBTC" ng-bind="singleDogecoinPriceInBTC + ' - Dogecoin Price Calculator - Wow Such'">Dogecoin Price Calculator - Compare Dogecoin value to Bitcoin and USD - Wow Such</title>
   <meta name="description" content="Live Dogecoin price calculator. Compare Dogecoin value to Bitcoin and USD in real time. Get the Dogecoin exchange rate instantly. DOGE/BTC/USD market.">
@@ -23,10 +23,10 @@
 
   <div class="row">
     <div class="so-centered small-12 columns small-centered">
-      <a href="http://wowsuch.io" class="on">Home</a> |
-      <a href="http://wowsuch.io/widgets">Widgets</a> |
-      <a href="https://github.com/swirlycheetah/wowsuch" target="_blank">Github</a> |
-      <a href="https://twitter.com/swirlycheetah" target="_blank">Twitter</a>
+      <a class="nav-item on" href="http://wowsuch.io">Home</a>
+      <a class="nav-item" href="http://wowsuch.io/widgets">Widgets</a>
+      <a class="nav-item" href="https://github.com/swirlycheetah/wowsuch" target="_blank">Github</a>
+      <a class="nav-item" href="https://twitter.com/swirlycheetah" target="_blank">Twitter</a>
     </div>
   </div>
 
@@ -50,7 +50,7 @@
 
   <div class="row">
     <div class="very-value small-6 columns" >
-      <h3><input class="much-input" ng-model="numberOfBTCInput" ng-change="amendBTCInput(numberOfBTCInput)" type="tel" placeholder="BTC" /></h3>
+      <h3><input class="much-input" ng-model="numberOfBTCInput" ng-change="amendBTCInput(numberOfBTCInput)" type="tel"/></h3>
     </div>
 
     <div class="small-6 columns">
@@ -66,11 +66,11 @@
 
   <div class="row">
     <div class="very-value small-6 columns" >
-      <h3><input class="much-input" ng-model="numberOfUSDInput" ng-change="amendUSDInput(numberOfUSDInput)" type="tel" placeholder="USD" /></h3>
+      <h3><input class="much-input" ng-model="numberOfFIATInput" ng-change="amendFIATInput(numberOfFIATInput)" type="tel"/></h3>
     </div>
 
-    <div class="small-6 columns">
-      <h3>USD</h3>
+    <div class="such-left small-4 columns">
+      <select class="much-input" ng-model="selectedCurrency" ng-options="currency.name for currency in currencies" ng-change="changeCurrency(selectedCurrency.name)"></select><br>
     </div>
   </div>
 
